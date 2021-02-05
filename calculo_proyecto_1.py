@@ -9,7 +9,7 @@ Escriba aqui los nombres de los integrantes del grupo:
 -Hector Salazar. C.I 25967387 
 -Lewis Narvaez. C.I 26087715
 """
-
+#Taylor
 def derivada(f, h = 0.01):
     """
     devuelve la función derivada de f dado un h.
