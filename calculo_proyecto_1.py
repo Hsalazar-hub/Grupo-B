@@ -46,3 +46,10 @@ def polinomio_taylor(f, x0, n):
             i+=1      
         return p
     return polinomio
+
+def prueba(f,x,x0,n):  #Funcion de prueba de polinomio de taylor
+   
+    poli=polinomio_taylor(f,x0,n)
+    print("Valor Aproximado: ",poli(x))
+    print("      Valor Real: ",f(x))
+    print("  Error Relativo: ", f(x)-poli(x))
