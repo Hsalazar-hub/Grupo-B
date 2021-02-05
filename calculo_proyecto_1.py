@@ -22,3 +22,27 @@ def derivada(f, h = 0.01):
         return (f(x + h) - f(x))/h
 
     return _
+
+def polinomio_taylor(f, x0, n):
+    """
+    Devuelve el Polinomio de Taylor de grado n centrado en x0.
+    Parametros:
+        f: función f(x).
+        x0: centro del polinomio.
+        n: grado del polinomio.
+        p:Polinomio
+        d_Actual:Derivada actual
+    """
+    def polinomio(x):
+        i=1
+        p=f(x0)     #inicio del polinomio 
+        while (i!=n+1):
+            if (i==1):
+                d_Actual=derivada(f)    #Primera derivada
+                p+=d_Actual(x0) * (x-x0)    #Se agrega al polinomio la primera derivada
+            else:
+                d_Actual=derivada(d_Actual) #Se calculan todas las demas derivadas
+                p+=( d_Actual(x0) * (x-x0)**i ) / math.factorial(i) #Se agregan al polinomio las demas iteraciones
+            i+=1      
+        return p
+    return polinomio
